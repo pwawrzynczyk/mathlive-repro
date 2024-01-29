@@ -1,6 +1,6 @@
 import 'mathlive';
 import { MathfieldElement } from 'mathlive';
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 declare global {
   namespace JSX {
@@ -15,7 +15,13 @@ function App() {
   const ref = useRef<MathfieldElement | null>(null);
 
   // defined in browser, not defined in tests
-  console.log('hasFocus', ref.current?.hasFocus)
+
+  useEffect(() => {
+    if (ref.current) {
+      console.log('ref defined?', !!ref.current)
+      console.log('hasFocus', ref.current.hasFocus)
+    }
+  }, [])
 
   return (
     <>

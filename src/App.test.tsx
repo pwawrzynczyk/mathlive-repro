@@ -2,6 +2,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
 
+// this test won't pass (yet), but is here just to show that custom function on mathlive is not available in tests
 describe('test', () => {
   it('renders learn react link', async () => {
     const { getByTestId } = render(<App />);
